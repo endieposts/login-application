@@ -105,7 +105,7 @@ class App extends Component {
                 <Route path="/users/:username" 
                   render={(props) => <Profile isAuthenticated={this.state.isAuthenticated} currentUser={this.state.currentUser} {...props}  />}>
                 </Route>
-                <Route component={NotFound}></Route>
+                <PrivateRoute authenticated={this.state.isAuthenticated} path="/poll/newpoll" handleLogout={this.handleLogout}></PrivateRoute>
               </Switch>
             </div>
           </Content>
